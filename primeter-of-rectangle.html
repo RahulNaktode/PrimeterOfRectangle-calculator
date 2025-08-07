@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Primeterr Of Rectangle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="heading">Primeter of rectangle</h1>
+    <div class="container">
+        <h1>Formula : P = 2(l+w)</h1>
+        <div class="name">
+           <h2>l (length)</h2> <input type="text" placeholder="Enter the Value" class="input" id="num1">
+        </div>
+        <p id="error1"></p>
+        
+        <div class="name">
+            <h2>w (width)</h2><input type="text" placeholder="Enter the Value" class="input"  id="num2">
+        </div>
+        <p id="error2"></p>
+
+        <p id="result"></p>
+
+        <div class="btn">
+            <button class="btn-container" onclick="PrimeterOfrectangle()">Area</button>
+            <button class="btn-container" onclick="clearInputs()">Clear</button>
+        </div>
+    </div>
+
+    <script>
+        function PrimeterOfrectangle(){
+            const inputelement1 = document.getElementById("num1");
+            const inputelement2 = document.getElementById("num2");
+            const resultelement = document.getElementById("result");
+            const errelement1 = document.getElementById("error1");
+            const errelement2 = document.getElementById("error2");
+
+            const val1 = parseInt(inputelement1.value);
+            if(isNaN(val1)){
+                errelement1.innerText="Enter valid value";
+                return;
+            }
+            errelement1.innerText="";
+            const val2 = parseInt(inputelement2.value);
+            if(isNaN(val2)){
+                errelement2.innerText="Enter valid value";
+                return;
+            }
+            errelement2.innerText="";
+
+            const area = 2*(parseInt(inputelement1.value) + parseInt(inputelement2.value));
+            resultelement.innerText = `Area = ${area}`;
+        }
+
+        function clearInputs(){
+            const inputelement1 = document.getElementById("num1");
+            const inputelement2 = document.getElementById("num2");
+            const resultelement = document.getElementById("result");
+
+            inputelement1.value="";
+            inputelement2.value="";
+            resultelement.value="";
+        }
+    </script>
+</body>
+</html>
